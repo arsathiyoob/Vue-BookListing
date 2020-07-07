@@ -1,15 +1,18 @@
 <template>
 <div><h1> {{ title }} </h1>
 <ul>
-<li v-for="book in books">'{{ book-item }}'</li>
+<book-item v-for="book in books" :book='book'></book-item>
 </ul>
 </div>
 
 </template>
 <script>
-import "./BookItem"
+import BookItem from "./BookItem";
 export default {
 name: 'BookList',
+components: {
+  BookItem
+},
 data(){
   return{
     title: 'All Books',
@@ -20,8 +23,6 @@ data(){
   ]
   }
 },
-components: 'BookItem'
-
 }
 </script>
 <style>
